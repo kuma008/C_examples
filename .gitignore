@@ -1,0 +1,17 @@
+*.[ao]
+*~
+*.exe
+*.out
+hello_world_framework/*.exe
+hello_world_framework/*.o
+hello_world_framework/*.out
+hello_world_framework/bin/
+hello_world_framework/obj/
+hello_world_framework/doc/
+hello_world_framework/lcc/
+hello_world_framework/src/*.o
+hello_world_framework/src/*.exe
+hello_world_framework/src/a.out
+hello_world_framework/src/*.a
+hello_world_framework/src/*.so.1
+

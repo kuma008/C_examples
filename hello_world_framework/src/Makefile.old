@@ -1,0 +1,64 @@
+# Makefile for C examples in Introduction-to-C-using-lcc-with-index-V20120415.pdf by Jacob Navia.
+# Note: This Makefile is being maintained in Geany and the folder structures
+# conform to Code::Blocks conventions (cbp = Code::Blocks Project).
+# Authour: Guanglin Du (dglqxq@163.com)
+# Date: 2013/02/10
+
+# Using variables to switch the Current Compiler (CC)
+CC = gcc
+#CC = g++
+
+# options I'll pass to the compiler.
+CFLAGS = -Wall -g -c
+
+## Source file names(implementation & main, naming convention over new rules)
+BASE = hello_world_framework
+MAIN = ${BASE}_main
+
+# File extension
+EXT = c
+
+##Object and bin file dirs(compatible with Code::Blocks)
+#Linux/Unix
+#OBJ_DIR = ./obj/Debug
+#BIN_DIR = ./bin/Debug
+#Windows only
+OBJ_DIR = .\obj\Debug
+BIN_DIR = .\bin\Debug
+
+# Conventionally, the executable on Linux will be given the file extension out.
+# Modify this as you like.
+BIN = a.out
+
+#Attentions: The 1st target is the default one
+all: run
+
+mkdir:
+#Linux/Unix only
+#	mkdir -p $(OBJ_DIR)
+#	mkdir -p $(BIN_DIR)
+#	test -d $(OBJ_DIR) || mkdir $(OBJ_DIR)
+#	test -d $(BIN_DIR) || mkdir $(BIN_DIR)
+#Windows only
+	if not exist $(OBJ_DIR) mkdir $(OBJ_DIR)
+	if not exist $(BIN_DIR) mkdir $(BIN_DIR)
+
+compile-base: mkdir
+	${CC} ${CFLAGS} ${BASE}.${EXT} -o ${OBJ_DIR}/${BASE}.o
+
+compile-main: compile-base
+	${CC} ${CFLAGS} ${MAIN}.${EXT} -o ${OBJ_DIR}/${MAIN}.o
+	
+compile: compile-base compile-main
+
+build: compile
+	${CC} ${OBJ_DIR}/${MAIN}.o ${OBJ_DIR}/${BASE}.o -o ${BIN_DIR}/${BIN}
+
+run: build
+	${BIN_DIR}/${BIN}
+	
+clean:
+	del ${OBJ_DIR}\*.o ${BIN_DIR}\*.exe ${BIN_DIR}\*.out
+#Linux/Unix
+	#	rm -f ${OBJ_DIR}/*.o ${BIN_DIR}/*.exe ${BIN_DIR}/*.out
+	

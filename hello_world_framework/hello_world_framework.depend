@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1377997260 source:/home/dugl/Programming/C_C++/examples/hello_world_framework/src/hello_world_framework.c
+	<stdio.h>
+	"hello_world_framework.h"
+
+1377997260 /home/dugl/Programming/C_C++/examples/hello_world_framework/src/hello_world_framework.h
+
+1377997260 source:/home/dugl/Programming/C_C++/examples/hello_world_framework/src/hello_world_framework_main.c
+	<stdio.h>
+	"hello_world_framework.h"
+	"pointer_examples.h"
+
+1377997260 /home/dugl/Programming/C_C++/examples/hello_world_framework/src/pointer_examples.h
+	<stdbool.h>
+
+1377997260 source:/home/dugl/Programming/C_C++/examples/hello_world_framework/src/pointer_examples.c
+	<stdio.h>
+	"pointer_examples.h"
+
