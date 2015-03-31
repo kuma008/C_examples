@@ -15,3 +15,8 @@ hello_world_framework/src/a.out
 hello_world_framework/src/*.a
 hello_world_framework/src/*.so.1
 
+# Excludes bin files of hello_pointer
+hello_pointer/*.o
+hello_pointer/*.exe
+hello_pointer/.out
+
